@@ -3,12 +3,22 @@
 const mockDatabase = {
   employees: [
     {
+      empId: "EMP-0001",
+      name: "Chief Security Officer Devendra Sharma",
+      department: "Executive Security & Board Admin",
+      role: "SUPER_ADMIN",
+      password: "superpassword",
+      token: "EMP_TOKEN_SUPER_ADMIN_0001",
+      permissions: ["FULL_SYSTEM_ACCESS", "GLOBAL_OVERRIDE", "POLICY_RECONFIG", "AUDIT_MASTER"]
+    },
+    {
       empId: "EMP-9021",
       name: "Officer Vikram Seth",
       department: "Fraud Operations",
       role: "ANALYST",
       password: "password123",
-      token: "EMP_TOKEN_VIKRAM_9021"
+      token: "EMP_TOKEN_VIKRAM_9021",
+      permissions: ["CASE_INVESTIGATE", "MANUAL_ACTION"]
     },
     {
       empId: "EMP-1004",
@@ -16,7 +26,8 @@ const mockDatabase = {
       department: "Compliance & Risk",
       role: "ADMIN",
       password: "adminpassword",
-      token: "EMP_TOKEN_ANANYA_1004"
+      token: "EMP_TOKEN_ANANYA_1004",
+      permissions: ["COMPLIANCE_VIEW", "AUDIT_READ"]
     }
   ],
   customers: [

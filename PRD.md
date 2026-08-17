@@ -37,6 +37,7 @@ In modern telecommunications, phone numbers of deactivated subscribers are routi
 
 | Persona | Role | Primary Goals & Needs |
 | :--- | :--- | :--- |
+| **Super Admin / Chief Security Officer** | Full System Administrator (`EMP-0001`) | Holds complete unrestricted system access to reconfigure risk policy thresholds, execute global account overrides, manage staff RBAC roles, inspect full audit logs, and override all security restrictions platform-wide. |
 | **Bank Security / Ops Employee** | Bank Employee / Fraud Analyst | Wants a dedicated dashboard (`/employee-login.html`) to monitor real-time SIM recycling alerts, view account risk scores, manage manual overrides, and inspect flagged transactions. |
 | **Bank Customer (Impacted)** | Existing Account Holder | Wants immediate notification if their old mobile number is reassigned, seamless temporary portal access (`/customer-login.html`) using an alternate number to secure their account, and simple re-registration. |
 | **New Mobile Subscriber** | Unintended Recipient of Recycled SIM | Prevented from receiving confidential banking OTPs or messages intended for the prior owner of the mobile number. |
@@ -98,11 +99,22 @@ In modern telecommunications, phone numbers of deactivated subscribers are routi
   - Real-time queue of recycled SIM alerts, account lock statuses, and fraud scores.
   - Manual override tools to unlock accounts, re-send verification links, or escalate suspicious activity.
   - Analytics panel displaying average deregistration time, customer recovery rates, and feedback metrics.
-- **FR-8.2 Customer Temporary Recovery Portal (`/customer-login.html`):**
-  - Accessible via Alternate Mobile Number + Aadhaar Last 4 Digits + One-Time OTP.
-  - Clean, frictionless UI showing current security status of their bank account.
-  - Step-by-step wizard to verify identity, update primary number, unblock cards, and submit feedback.
-  - **Automatic Session Expiry:** The moment the customer completes resolution or logs off, temporary portal access is **automatically terminated and revoked** for maximum security.
+- **FR-8.2 Super Admin Role & Unrestricted Platform Access (`SUPER_ADMIN` / `EMP-0001`):**
+  - Dedicated Super Administrator account holding complete, unrestricted platform control across all system subsystems.
+  - Capability to reconfigure Risk Engine signal weights and Policy Engine decision bands (`MONITOR`, `STEP_UP`, `RESTRICT`, `CONTAIN`).
+  - Full authority to execute global manual overrides on any locked or restricted customer account.
+  - Unrestricted access to master audit trails, encryption tokenization keys, and staff RBAC privilege management.
+
+#### 4.8.3 Role-Based Access Control (RBAC) Matrix
+
+| Feature / Subsystem Scope | `SUPER_ADMIN` (`EMP-0001`) | `ADMIN` (`EMP-1004`) | `ANALYST` (`EMP-9021`) |
+| :--- | :---: | :---: | :---: |
+| **View Active Cases & SIM Feed** | ✅ Full Access | ✅ Full Access | ✅ Full Access |
+| **Inspect Case Risk Signals** | ✅ Full Access | ✅ Full Access | ✅ Full Access |
+| **Execute Manual Account Unlock/Freeze** | ✅ Full Override | ⚠️ Approval Required | ⚠️ Case-level Only |
+| **Reconfigure Risk & Policy Engine** | ✅ Full Access | ❌ Read Only | ❌ Read Only |
+| **Master Audit Trail & Security Logs** | ✅ Full Access | ✅ Read Only | ❌ No Access |
+| **Staff Privilege & RBAC Management** | ✅ Full Access | ❌ No Access | ❌ No Access |
 
 ---
 
