@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank NumberShield | Executive Presentation Deck</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at center, #131d2e 0%, #0b0f17 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .slide-deck-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .slide-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 1050px;
+      min-height: 560px;
+      padding: 3rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeInSlide 0.3s ease-in-out;
+    }
+
+    .slide-card.active {
+      display: flex;
+    }
+
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .slide-body {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .slide-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    .slide-box {
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .slide-box h3 {
+      font-size: 1.15rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.8rem;
+    }
+
+    .slide-box p, .slide-box ul {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .slide-box ul {
+      padding-left: 1.2rem;
+    }
+
+    .slide-box li {
+      margin-bottom: 6px;
+    }
+
+    /* Controls Bar */
+    .deck-controls-nav {
+      background-color: rgba(11, 15, 23, 0.95);
+      border-top: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-btn-group {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .slide-counter {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .keyboard-hint {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .table-slide-wrapper {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <img src="assets/logo.jpg" alt="Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">Bank NumberShield</span>
+          <span class="brand-subtitle">EXECUTIVE PRESENTATION DECK</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="btn-sm btn-secondary">Go to Live Application</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide Deck Viewport -->
+  <div class="slide-deck-container">
+
+    <!-- SLIDE 1: Title & Executive Summary -->
+    <div class="slide-card active" data-slide="1">
+      <div>
+        <div class="slide-tag">Slide 01 // Executive Presentation</div>
+        <h1 class="slide-title">Bank NumberShield: Automated Telecom SIM Recycling Protection</h1>
+        <div class="slide-body">
+          <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            A next-generation banking security platform preventing account takeover fraud caused by recycled mobile numbers.
+          </p>
+          <div class="slide-grid-2">
+            <div class="slide-box">
+              <h3>🚨 The Problem</h3>
+              <p>Telecom operators recycle inactive phone numbers after 90 days. When reallocated, new SIM holders receive confidential banking OTPs and access to previous subscribers' bank accounts.</p>
+            </div>
+            <div class="slide-box">
+              <h3>🛡️ The Solution</h3>
+              <p>Automated 1-hour SLA phone number deregistration, Aadhaar Vault alternate contact discovery, AI fraud velocity scanner, and dual-portal customer recovery architecture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-info">
+        <span class="badge badge-cyan">Target: Executive Board & CISO</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: The Critical Problem -->
+    <div class="slide-card" data-slide="2">
+      <div>
+        <div class="slide-tag">Slide 02 // Problem Breakdown</div>
+        <h2 class="slide-title">The Recycled Mobile SIM Vulnerability</h2>
+        <div class="slide-body">
+          <div class="slide-grid-2">
+            <div class="slide-box">
+              <h3>📱 Telecom Recycling Reality</h3>
+              <ul>
+                <li>Over 15 million mobile numbers are recycled annually by telecom operators.</li>
+                <li>68% of bank customers fail to update their primary mobile number when changing SIMs.</li>
+                <li>New SIM holders unknowingly inherit access to SMS banking alerts and password resets.</li>
+              </ul>
+            </div>
+            <div class="slide-box">
+              <h3>⚠️ Financial & Regulatory Impact</h3>
+              <ul>
+                <li><strong>Account Takeovers:</strong> Fraudulent password resets & wire transfers.</li>
+                <li><strong>UPI Hijacking:</strong> Automated UPI payment binding to recycled SIMs.</li>
+                <li><strong>Non-Compliance:</strong> Violates RBI Cybersecurity Guidelines & PCI-DSS 4.0 standards.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Solution & Operating Principles -->
+    <div class="slide-card" data-slide="3">
+      <div>
+        <div class="slide-tag">Slide 03 // Solution Architecture</div>
+        <h2 class="slide-title">Core Operating Principles</h2>
+        <div class="slide-body">
+          <div class="slide-grid-2">
+            <div class="slide-box">
+              <h3>1. Automated Real-Time Ingestion</h3>
+              <p>Continuous background listener ingesting telecom SIM allocation & Aadhaar verification events in real-time.</p>
+            </div>
+            <div class="slide-box">
+              <h3>2. Strict 1-Hour SLA Deregistration</h3>
+              <p>Deactivates SMS OTP dispatch, UPI handles, and mobile banking access within 60 minutes of new SIM activation.</p>
+            </div>
+            <div class="slide-box">
+              <h3>3. Aadhaar Vault Outreach</h3>
+              <p>Queries bank CKYC & Aadhaar Data Vault to find verified alternate contacts without needing manual user API consents.</p>
+            </div>
+            <div class="slide-box">
+              <h3>4. Security Restrict Mode</h3>
+              <p>Automatically freezes high-value outbound transfers and locks debit/credit cards until identity is re-verified.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Dual Portal Architecture -->
+    <div class="slide-card" data-slide="4">
+      <div>
+        <div class="slide-tag">Slide 04 // Dual-Portal Operations</div>
+        <h2 class="slide-title">Dual Portal Architecture</h2>
+        <div class="slide-body">
+          <div class="slide-grid-2">
+            <div class="slide-box">
+              <h3>🏢 Bank Staff Operations Portal</h3>
+              <p><code>/employee-login.html</code></p>
+              <ul>
+                <li>Role-Based Access Control (Analyst, Compliance, Admin).</li>
+                <li>Live SIM recycling queue monitor & alert feed.</li>
+                <li>Manual account inspection & officer override controls.</li>
+                <li>Customer satisfaction (CSAT) analytics dashboard.</li>
+              </ul>
+            </div>
+            <div class="slide-box">
+              <h3>📱 Customer Recovery Portal</h3>
+              <p><code>/customer-login.html</code></p>
+              <ul>
+                <li>Accessed via Alternate Number + Aadhaar Last 4 + OTP.</li>
+                <li>3-Step Guided Wizard to update primary number.</li>
+                <li>Card restore toggles & CSAT feedback module.</li>
+                <li><strong>Session Self-Destruct:</strong> Access permanently revoked upon exit.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: Technical & REST API Architecture -->
+    <div class="slide-card" data-slide="5">
+      <div>
+        <div class="slide-tag">Slide 05 // Technical Implementation</div>
+        <h2 class="slide-title">Technical Stack & REST API Architecture</h2>
+        <div class="slide-body">
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Built with <strong>Node.js (v24), Express.js, AES-256-GCM Encryption</strong>, and Format-Preserving Tokenization (FPE).
+          </p>
+          <div class="table-slide-wrapper">
+            <table class="fraud-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>API Endpoint</th>
+                  <th>Functionality</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>POST</code></td>
+                  <td>`/api/auth/employee-login`</td>
+                  <td>Authenticates bank security officers</td>
+                </tr>
+                <tr>
+                  <td><code>POST</code></td>
+                  <td>`/api/auth/customer-temp-login`</td>
+                  <td>Authenticates customer temporary recovery session</td>
+                </tr>
+                <tr>
+                  <td><code>GET</code></td>
+                  <td>`/api/sim-events/feed`</td>
+                  <td>Streams real-time SIM recycling queue</td>
+                </tr>
+                <tr>
+                  <td><code>POST</code></td>
+                  <td>`/api/account/reregister-number`</td>
+                  <td>Updates primary number via Aadhaar eKYC</td>
+                </tr>
+                <tr>
+                  <td><code>POST</code></td>
+                  <td>`/api/account/card-controls`</td>
+                  <td>Unblocks or emergency freezes cards</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: Regulatory Compliance -->
+    <div class="slide-card" data-slide="6">
+      <div>
+        <div class="slide-tag">Slide 06 // Regulatory Compliance</div>
+        <h2 class="slide-title">Regulatory & Statutory Identity Compliance</h2>
+        <div class="slide-body">
+          <div class="slide-grid-2">
+            <div class="slide-box">
+              <h3>🏛️ RBI Cyber Security Framework</h3>
+              <p>Meets mandatory guidelines for rapid account isolation, multi-factor authentication, and proactive fraud containment.</p>
+            </div>
+            <div class="slide-box">
+              <h3>🔐 PCI-DSS 4.0 Level 1</h3>
+              <p>Replaces raw credit card PANs and PII with format-preserving surrogate tokens (`TOK-PAN-XXXX`) to remove database files from PCI audit scope.</p>
+            </div>
+            <div class="slide-box">
+              <h3>🆔 UIDAI Aadhaar Vault</h3>
+              <p>Queries internal bank Aadhaar Data Vault for alternate contacts under existing statutory identity verification authority.</p>
+            </div>
+            <div class="slide-box">
+              <h3>📜 DPDP Act 2023 / GDPR</h3>
+              <p>Enforces strict PII data minimization and automated session token self-destruction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: Measurable KPIs & Roadmap -->
+    <div class="slide-card" data-slide="7">
+      <div>
+        <div class="slide-tag">Slide 07 // Roadmap & KPIs</div>
+        <h2 class="slide-title">Measurable KPIs & Implementation Roadmap</h2>
+        <div class="slide-body">
+          <div class="slide-grid-2">
+            <div class="slide-box">
+              <h3>📊 Key Metrics</h3>
+              <ul>
+                <li><strong>Deregistration SLA:</strong> &lt; 42 minutes average time.</li>
+                <li><strong>Fraud Prevention:</strong> 99.9% reduction in recycled SIM account takeovers.</li>
+                <li><strong>Self-Service Rate:</strong> &gt; 85% customer resolution rate.</li>
+                <li><strong>Customer CSAT:</strong> 4.8 / 5.0 resolution satisfaction rating.</li>
+              </ul>
+            </div>
+            <div class="slide-box">
+              <h3>🚀 5-Phase Rollout Plan</h3>
+              <ul>
+                <li><strong>Phase 1 (M1):</strong> Telecom SIM Feed Ingestion.</li>
+                <li><strong>Phase 2 (M2):</strong> Core Banking System (CBS) Deregistration Hooks.</li>
+                <li><strong>Phase 3 (M3):</strong> Customer Recovery Portal & Alert Engine.</li>
+                <li><strong>Phase 4 (M4):</strong> Staff Operations Console & Analytics.</li>
+                <li><strong>Phase 5 (M5):</strong> Security Audits & Production Pilot.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: Conclusion & Thank You -->
+    <div class="slide-card" data-slide="8">
+      <div>
+        <div class="slide-tag">Slide 08 // Conclusion</div>
+        <h1 class="slide-title">Thank You</h1>
+        <div class="slide-body">
+          <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Bank NumberShield: Protecting Accounts, Preserving Customer Trust.
+          </p>
+          <div class="slide-box">
+            <h3>🔗 Quick Access Links</h3>
+            <ul>
+              <li><strong>Live Web Application:</strong> <a href="index.html" class="link-cyan">http://localhost:8000</a></li>
+              <li><strong>Bank Staff Login:</strong> <a href="employee-login.html" class="link-cyan">http://localhost:8000/employee-login.html</a></li>
+              <li><strong>Customer Login:</strong> <a href="customer-login.html" class="link-cyan">http://localhost:8000/customer-login.html</a></li>
+              <li><strong>Full PRD Specification:</strong> <code>d:/Numbershield/PRD.md</code></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls Nav -->
+  <div class="deck-controls-nav">
+    <div class="keyboard-hint">
+      <span>💡 Navigation: Use <strong>Left / Right Arrow Keys</strong> or Buttons to navigate slides</span>
+    </div>
+    <div class="slide-counter" id="slide-counter-display">
+      Slide 1 of 8
+    </div>
+    <div class="nav-btn-group">
+      <button id="prev-slide-btn" class="btn-secondary">◄ Previous</button>
+      <button id="next-slide-btn" class="btn-primary">Next Slide ►</button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 8;
+
+    const prevBtn = document.getElementById('prev-slide-btn');
+    const nextBtn = document.getElementById('next-slide-btn');
+    const counterDisplay = document.getElementById('slide-counter-display');
+
+    function showSlide(n) {
+      if (n < 1) n = 1;
+      if (n > totalSlides) n = totalSlides;
+      currentSlide = n;
+
+      document.querySelectorAll('.slide-card').forEach(card => {
+        card.classList.remove('active');
+        if (parseInt(card.getAttribute('data-slide'), 10) === currentSlide) {
+          card.classList.add('active');
+        }
+      });
+
+      counterDisplay.innerText = `Slide ${currentSlide} of ${totalSlides}`;
+      prevBtn.disabled = (currentSlide === 1);
+      nextBtn.disabled = (currentSlide === totalSlides);
+    }
+
+    prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+    nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+        showSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        showSlide(currentSlide - 1);
+      }
+    });
+
+    showSlide(1);
+  </script>
+</body>
+</html>

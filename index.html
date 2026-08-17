@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank NumberShield | Telecom SIM Recycling & Account Security Platform</title>
+  <meta name="description" content="Bank NumberShield - Automated mobile number deregistration, SIM recycling fraud protection, alternate number recovery, and dual-portal banking system.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <img src="assets/logo.jpg" alt="Bank NumberShield Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">NumberShield</span>
+          <span class="brand-subtitle">BANKING EDITION v3.0</span>
+        </div>
+      </div>
+
+      <!-- Portal View Selector Tabs -->
+      <div class="portal-selector">
+        <button id="view-employee-btn" class="portal-tab active">
+          🏢 Employee Operations Portal
+        </button>
+        <button id="view-customer-btn" class="portal-tab">
+          📱 Customer Temporary Recovery Portal
+        </button>
+      </div>
+
+      <div class="header-status">
+        <span class="status-indicator live"></span>
+        <span class="status-text">Aadhaar Vault Connected • 1-Hr SLA Active</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main App Viewport -->
+  <main class="app-viewport">
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <div class="security-pill">
+          <span class="shield-icon">🛡️</span> Telecom SIM Recycling & Identity Protection Engine
+        </div>
+        <h1>Automated Recycled Number Deregistration</h1>
+        <p class="hero-desc">
+          When a phone number is reallocated via Aadhaar verification, Bank NumberShield automatically deregisters the old number within 1 hour, alerts the customer via alternate verified contacts, freezes account risks, and provides safe temporary access.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span class="stat-value" id="stat-sla-time">&lt; 42 Mins</span>
+            <span class="stat-label">Avg Deregistration Time (SLA: 1 Hr)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" id="stat-sim-events">2,841</span>
+            <span class="stat-label">Recycled SIMs Deregistered</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Aadhaar & CKYC Vault Integrated</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTAL VIEW 1: BANK EMPLOYEE OPERATIONS PORTAL -->
+    <div id="employee-portal-view" class="portal-view active">
+      <div class="portal-header-bar">
+        <div>
+          <h2>🏢 Bank Employee Operations & Fraud Tracking Dashboard</h2>
+          <p class="panel-subtitle">Role-Based Staff Access • Real-Time SIM Reallocation Monitor & Account Controls</p>
+        </div>
+        <button id="trigger-sim-event-btn" class="btn-primary">⚡ Simulate Recycled SIM Event</button>
+      </div>
+
+      <!-- Live SIM Allocation Queue & Action Center -->
+      <section class="card-panel">
+        <div class="panel-header">
+          <h3>📡 Real-Time Telecom SIM Recycling Feed (Automated Ingestion)</h3>
+          <span class="badge badge-cyan">Continuous Background Listener</span>
+        </div>
+
+        <div class="fraud-table-wrapper">
+          <table class="fraud-table">
+            <thead>
+              <tr>
+                <th>Event Time</th>
+                <th>Reallocated Mobile #</th>
+                <th>Customer Name</th>
+                <th>Verified Alternate #</th>
+                <th>1-Hr SLA Status</th>
+                <th>Account Controls</th>
+                <th>Staff Actions</th>
+              </tr>
+            </thead>
+            <tbody id="sim-feed-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="employee-grid">
+        <!-- Account Deep Inspection & Override -->
+        <section class="card-panel">
+          <h3>🔎 Account Security Inspection & Manual Override</h3>
+          <div id="inspection-details-box" class="inspection-card">
+            <p class="placeholder-text">Click "Inspect & Override" on any SIM event in the table above to load customer details...</p>
+          </div>
+        </section>
+
+        <!-- Customer Feedback & Metrics -->
+        <section class="card-panel">
+          <h3>⭐ Customer Feedback & Resolution Tracking</h3>
+          <div class="feedback-stats-box">
+            <div class="rating-display">
+              <span class="rating-num">4.8 / 5.0</span>
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-label">Overall Customer Resolution CSAT</span>
+            </div>
+            <div class="recent-feedback-list" id="feedback-items-list">
+              <div class="feedback-item">
+                <div class="fb-header">
+                  <strong>Customer #8921 (Rajesh Kumar)</strong>
+                  <span class="fb-rating">5 ★</span>
+                </div>
+                <p class="fb-text">"Got alerted immediately on my alternate number when my old SIM was given to someone else. Updated my number seamlessly!"</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- PORTAL VIEW 2: CUSTOMER TEMPORARY RECOVERY PORTAL -->
+    <div id="customer-portal-view" class="portal-view">
+      <div class="portal-header-bar alert-bar">
+        <div>
+          <h2>📱 Customer Temporary Account Recovery Portal</h2>
+          <p class="panel-subtitle">Temporary Portal Access Granted via Verified Alternate Number • Auto-Self Destructs Upon Resolution</p>
+        </div>
+        <div class="timer-badge">
+          <span>Session Auto-Expiry: </span>
+          <strong id="session-countdown">14:59</strong>
+        </div>
+      </div>
+
+      <div class="customer-workspace-grid">
+        <!-- Left: Status & Actions -->
+        <div class="card-panel">
+          <div class="security-alert-box">
+            <div class="alert-icon">⚠️</div>
+            <div>
+              <h3>Security Alert: Your Mobile Number Was Reallocated</h3>
+              <p>Our automated Aadhaar verification feed detected that your old phone number <strong>+91 98765-XXXXX</strong> has been assigned to a new user by the telecom operator. For your security, the bank has <strong>deregistered that number within 1 hour</strong> to prevent unauthorized access.</p>
+            </div>
+          </div>
+
+          <div class="service-status-grid">
+            <div class="status-card locked">
+              <span class="status-icon">🔒</span>
+              <div>
+                <strong>SMS Banking & OTPs</strong>
+                <span class="status-lbl text-rose">Deregistered & Blocked</span>
+              </div>
+            </div>
+
+            <div class="status-card locked">
+              <span class="status-icon">🔒</span>
+              <div>
+                <strong>UPI Payments & NetBanking</strong>
+                <span class="status-lbl text-rose">Deactivated (1-Hr SLA Met)</span>
+              </div>
+            </div>
+
+            <div class="status-card active">
+              <span class="status-icon">✅</span>
+              <div>
+                <strong>Verified Alternate Number</strong>
+                <span class="status-lbl text-green" id="cust-alt-num">+91 91234-56789</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 1: Re-Register Alternate Number -->
+          <div class="recovery-step-box">
+            <h3>Step 1: Set Alternate Number as Primary Banking Number</h3>
+            <p>You can re-register your bank account using your verified alternate number instantly:</p>
+            <div class="form-group row-group">
+              <input type="text" id="new-primary-num-input" class="text-input" value="+91 91234-56789">
+              <button id="reregister-num-btn" class="btn-primary">Verify & Re-Register Number</button>
+            </div>
+            <div id="reregister-msg" class="msg-box"></div>
+          </div>
+
+          <!-- Step 2: Unblock Cards & Transactions -->
+          <div class="recovery-step-box">
+            <h3>Step 2: Manage Account & Card Controls</h3>
+            <p>Unblock your linked cards and restore transaction capabilities once number is re-registered:</p>
+            <div class="controls-action-row">
+              <button id="cust-unblock-cards-btn" class="btn-secondary">🔓 Restore Cards & Transactions</button>
+              <button id="cust-freeze-all-btn" class="btn-ghost">🔒 Emergency Complete Freeze</button>
+            </div>
+            <div id="card-control-msg" class="msg-box"></div>
+          </div>
+        </div>
+
+        <!-- Right: Feedback & Session Completion -->
+        <div class="card-panel">
+          <h3>Step 3: Provide Feedback & Exit Portal</h3>
+          <p class="panel-subtitle">Help us improve bank security services:</p>
+
+          <form id="customer-feedback-form" class="feedback-form">
+            <div class="form-group">
+              <label>Rate Your Account Recovery Experience:</label>
+              <div class="star-rating-input">
+                <input type="radio" id="star5" name="rating" value="5" checked><label for="star5">★ 5</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★ 4</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★ 3</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="feedback-comments">Comments / Feedback:</label>
+              <textarea id="feedback-comments" class="code-textarea small-textarea" placeholder="Tell us how fast and smooth your experience was..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-action full-width">Submit Feedback & Close Temporary Session</button>
+          </form>
+
+          <div class="session-destruction-notice">
+            <p>🔒 <strong>Security Guarantee:</strong> The moment you complete this form or log off, your temporary portal access will be <strong>permanently revoked</strong> for your protection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRD Download & Reference Banner -->
+    <section class="card-panel prd-banner-card">
+      <div class="panel-header">
+        <div>
+          <h2>📄 Complete Product Requirement Document (PRD) Available</h2>
+          <p class="panel-subtitle">Comprehensive functional specs, regulatory compliance matrix, and technical architecture are documented in <a href="PRD.md" class="link-cyan">PRD.md</a>.</p>
+        </div>
+        <a href="PRD.md" target="_blank" class="btn-secondary">View Full PRD Document</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/logo.jpg" alt="Logo" class="footer-logo">
+        <span>Bank NumberShield Platform</span>
+      </div>
+      <p class="footer-text">Protected under RBI Cybersecurity Guidelines, PCI-DSS v4.0 & Aadhaar Data Vault Regulations.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

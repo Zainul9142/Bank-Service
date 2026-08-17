@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Staff Authentication | Bank NumberShield</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-body">
+
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="assets/logo.jpg" alt="Logo" class="login-logo">
+        <h2>Bank Staff Operations Login</h2>
+        <p class="login-subtitle">Restricted Access • Fraud Operations & SIM Recycling Console</p>
+      </div>
+
+      <form id="employee-login-form" class="login-form">
+        <div class="form-group">
+          <label for="emp-id">Employee ID / Officer Registration #</label>
+          <input type="text" id="emp-id" class="text-input" placeholder="e.g. EMP-9021" value="EMP-9021" required>
+        </div>
+
+        <div class="form-group">
+          <label for="emp-dept">Department & Operational Scope</label>
+          <select id="emp-dept" class="select-input">
+            <option value="Fraud Operations">Fraud Operations & Risk Monitoring</option>
+            <option value="Compliance">Regulatory Compliance & Aadhaar Audit</option>
+            <option value="CBS Administration">Core Banking System (CBS) Ops</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="emp-password">Corporate Account Password</label>
+          <input type="password" id="emp-password" class="text-input" value="password123" required>
+        </div>
+
+        <div class="form-group">
+          <label for="emp-mfa">Hardware Token / MFA Pin</label>
+          <input type="password" id="emp-mfa" class="text-input" placeholder="Enter 6-digit MFA PIN (Try: 123456)" value="123456">
+        </div>
+
+        <button type="submit" class="btn-action full-width">🔒 Authenticate & Access Operations Portal</button>
+
+        <div id="login-error-msg" class="msg-box error"></div>
+      </form>
+
+      <div class="login-footer">
+        <a href="customer-login.html" class="link-cyan">Need Customer Temporary Access? Click Here</a>
+        <p class="security-text">Protected by Hardware Security Modules (HSM) & FIDO2 Enterprise SSO</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('employee-login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const empId = document.getElementById('emp-id').value;
+      const password = document.getElementById('emp-password').value;
+      const department = document.getElementById('emp-dept').value;
+      const msgBox = document.getElementById('login-error-msg');
+
+      try {
+        const res = await fetch('/api/auth/employee-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ empId, password, department })
+        });
+        const data = await res.json();
+        if (data.success) {
+          sessionStorage.setItem('empToken', data.token);
+          sessionStorage.setItem('activeRole', 'EMPLOYEE');
+          sessionStorage.setItem('empUser', JSON.stringify(data.user));
+          window.location.href = 'index.html?portal=employee';
+        } else {
+          msgBox.innerText = data.message;
+          msgBox.style.display = 'block';
+        }
+      } catch (err) {
+        msgBox.innerText = 'Login server connection failed. Redirecting to demo view...';
+        msgBox.style.display = 'block';
+        setTimeout(() => { window.location.href = 'index.html?portal=employee'; }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

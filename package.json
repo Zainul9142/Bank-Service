@@ -1,0 +1,24 @@
+{
+  "name": "bank-numbershield",
+  "version": "3.0.0",
+  "description": "Enterprise Banking SIM Recycling Protection, Automated 1-Hour Deregistration & Dual Portal Platform",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "keywords": [
+    "banking-security",
+    "sim-recycling",
+    "aadhaar-vault",
+    "tokenization",
+    "pci-dss",
+    "fraud-prevention"
+  ],
+  "author": "Bank Security & Privacy Engineering",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
